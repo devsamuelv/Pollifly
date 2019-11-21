@@ -1,13 +1,13 @@
 <html>
 <head>
-  <title>Firebase Login</title>
+  <title>Pollifly</title>
   <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
   <link rel="stylesheet" href="../style.css" />
 </head>
 <body>
     <div class="header">
         <ul>
-            <h5 id="username">Username</h5>
+            <h5 id="username">Not Signed In</h5>
         </ul>
     </div>
 
@@ -20,13 +20,16 @@
   </div>
 
   <div id="user_div" class="loggedin-div">
-    <h3>Welcome User</h3>
-    <p id="user_para">Welcome to Firebase web login Example. You're currently logged in.</p>
-    <button onclick="editor()" id="goEditor">Open A New Project</button>
-    <h5></h5>
-    <button onclick="logout()">Logout</button>
+    <div class="user-content">
+        <ul class="user-polls">
+            <div class="poll" id="test-poll">
+                <h5 id="poll-title">Test</h5>
+                <h6 id="poll-date">date made</h6>
+            </div>
+        </ul>
+    </div>
   </div>
-  <script src="index.js"></script>
-  <script src="functions.js"></script>
+  <script src="main.js"></script>
+  <script src="nav.js"></script>
 </body>
 </html>
