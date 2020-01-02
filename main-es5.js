@@ -51,7 +51,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<app-navbar></app-navbar>\r\n\r\n<div class=\"container\">\r\n    <app-add-item></app-add-item>\r\n    <app-items></app-items>\r\n</div>";
+    __webpack_exports__["default"] = "<app-navbar></app-navbar>\r\n\r\n<div class=\"container\">\r\n    <app-add-item></app-add-item>\r\n    <app-items></app-items>\r\n</div>\r\n\r\n<!-- <div *ngIf=\"auth.user$ | async as user; else login\">\r\n    {{ user | json }}\r\n    <hr>\r\n    <button class=\"btn blue\" (click)=\"auth.signOut()\">Sign Out</button>\r\n</div>\r\n\r\n<ng-template #login>\r\n    <button class=\"btn light-blue\" (click)=\"auth.googleSignIn()\">Login with Google</button>\r\n</ng-template> -->";
     /***/
   },
 
@@ -91,7 +91,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div *ngIf=\"items?.length > 0;else noItems\">\n    <ul *ngFor=\"let item of items\" class=\"collection\">\n        <li class=\"collection-item\">\n            <strong id=\"title\">{{item.title}}:</strong> {{item.description}}\n        </li>\n    </ul>\n</div>\n\n<ng-template #noItems>\n    <hr>\n    <h5>there are no items to list</h5>\n</ng-template>";
+    __webpack_exports__["default"] = "<div *ngIf=\"items?.length > 0;else noItems\">\n    <ul *ngFor=\"let item of items\" class=\"collection\">\n        <li (dblclick)=\"deleteItem($event, item)\" class=\"collection-item\">\n            <strong id=\"title\">{{item.title}}:</strong> {{item.description}} \n            <a href=\"#\" class=\"secondary-content\"><i (click)=\"editItem($event, item)\" class=\"fa fa-pencil\"></i></a>\n        \n            <div *ngIf=\"editState && itemToEdit.id == item.id\">\n                <form (ngSubmit)=\"updateItem(item)\">\n                    <div class=\"row\">\n                        <!-- title -->\n                        <div class=\"input-field col s6\">\n                            <input type=\"text\" name=\"title\" [(ngModel)]=\"item.title\">\n                        </div>\n                        <!-- Description -->\n                        <div class=\"input-field col s6\">\n                            <input type=\"text\" name=\"description\" [(ngModel)]=\"item.description\">\n                        </div>\n                        <input type=\"Submit\" value=\"Delete Item\" (click)=\"deleteItem($event, item)\" class=\"btn red\">\n                        <input type=\"Submit\" value=\"Update Item\" (click)=\"updateItem(item)\" class=\"btn orange\">\n                    </div>\n                </form>\n            </div>\n        </li>\n    </ul>\n</div>\n\n<ng-template #noItems>\n    <hr>\n    <h5>there are no items to list</h5>\n</ng-template>";
+    /***/
+  },
+
+  /***/
+  "./node_modules/raw-loader/dist/cjs.js!./src/app/components/login/login.component.html":
+  /*!*********************************************************************************************!*\
+    !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/login/login.component.html ***!
+    \*********************************************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function node_modulesRawLoaderDistCjsJsSrcAppComponentsLoginLoginComponentHtml(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "<div>\n    \n</div>";
     /***/
   },
 
@@ -111,7 +131,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<nav>\n    <div class=\"nav-wrapper blue\">\n        <a href=\"/\" class=\"brand-logo center\">Pollifly Item Manager</a>\n    </div>\n</nav>";
+    __webpack_exports__["default"] = "<nav>\n    <div class=\"nav-wrapper blue\">\n        <a href=\"/\" class=\"brand-logo center\">Pollifly</a>\n        <i class=\"large material-icons \"></i>\n        <img class=\"responsive-img\" src=\"\">\n    </div>\n</nav>";
     /***/
   },
 
@@ -728,7 +748,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var AppComponent = function AppComponent() {
       _classCallCheck(this, AppComponent);
 
-      this.title = 'Pollifly';
+      this.title = 'Pollifly'; // constructor(public auth: AuthService) {
+      // }
     };
 
     AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -834,15 +855,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _components_add_item_add_item_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
     /*! ./components/add-item/add-item.component */
     "./src/app/components/add-item/add-item.component.ts");
+    /* harmony import */
+
+
+    var _components_login_login_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
+    /*! ./components/login/login.component */
+    "./src/app/components/login/login.component.ts");
+    /* harmony import */
+
+
+    var _services_auth_service__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
+    /*! ./services/auth.service */
+    "./src/app/services/auth.service.ts");
 
     var AppModule = function AppModule() {
       _classCallCheck(this, AppModule);
     };
 
     AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
-      declarations: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"], _components_items_items_component__WEBPACK_IMPORTED_MODULE_8__["ItemsComponent"], _components_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_10__["NavbarComponent"], _components_add_item_add_item_component__WEBPACK_IMPORTED_MODULE_11__["AddItemComponent"]],
+      declarations: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"], _components_items_items_component__WEBPACK_IMPORTED_MODULE_8__["ItemsComponent"], _components_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_10__["NavbarComponent"], _components_add_item_add_item_component__WEBPACK_IMPORTED_MODULE_11__["AddItemComponent"], _components_login_login_component__WEBPACK_IMPORTED_MODULE_12__["LoginComponent"]],
       imports: [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"], _angular_fire__WEBPACK_IMPORTED_MODULE_7__["AngularFireModule"].initializeApp(_environments_environment__WEBPACK_IMPORTED_MODULE_5__["environment"].firebase, "items"), _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_6__["AngularFirestoreModule"]],
-      providers: [_services_item_service__WEBPACK_IMPORTED_MODULE_9__["ItemService"]],
+      providers: [_services_item_service__WEBPACK_IMPORTED_MODULE_9__["ItemService"], _services_auth_service__WEBPACK_IMPORTED_MODULE_13__["AuthService"]],
       bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
     })], AppModule);
     /***/
@@ -1020,6 +1053,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         _classCallCheck(this, ItemsComponent);
 
         this.itemService = itemService;
+        this.editState = false;
       }
 
       _createClass(ItemsComponent, [{
@@ -1031,6 +1065,29 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             _this.items = items;
             console.log(items);
           });
+        }
+      }, {
+        key: "deleteItem",
+        value: function deleteItem(event, item) {
+          this.itemService.deleteItem(item);
+        }
+      }, {
+        key: "clearState",
+        value: function clearState() {
+          this.editState = false;
+          this.itemToEdit = null;
+        }
+      }, {
+        key: "updateItem",
+        value: function updateItem(item) {
+          this.itemService.updateItem(item);
+          this.editState = false;
+        }
+      }, {
+        key: "editItem",
+        value: function editItem(event, item) {
+          this.editState = true;
+          this.itemToEdit = item;
         }
       }]);
 
@@ -1052,6 +1109,85 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       /*! ./items.component.css */
       "./src/app/components/items/items.component.css")).default]
     })], ItemsComponent);
+    /***/
+  },
+
+  /***/
+  "./src/app/components/login/login.component.css":
+  /*!******************************************************!*\
+    !*** ./src/app/components/login/login.component.css ***!
+    \******************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function srcAppComponentsLoginLoginComponentCss(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvbG9naW4vbG9naW4uY29tcG9uZW50LmNzcyJ9 */";
+    /***/
+  },
+
+  /***/
+  "./src/app/components/login/login.component.ts":
+  /*!*****************************************************!*\
+    !*** ./src/app/components/login/login.component.ts ***!
+    \*****************************************************/
+
+  /*! exports provided: LoginComponent */
+
+  /***/
+  function srcAppComponentsLoginLoginComponentTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "LoginComponent", function () {
+      return LoginComponent;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+
+    var LoginComponent =
+    /*#__PURE__*/
+    function () {
+      function LoginComponent() {
+        _classCallCheck(this, LoginComponent);
+      }
+
+      _createClass(LoginComponent, [{
+        key: "ngOnInit",
+        value: function ngOnInit() {}
+      }]);
+
+      return LoginComponent;
+    }();
+
+    LoginComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+      selector: 'app-login',
+      template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
+      /*! raw-loader!./login.component.html */
+      "./node_modules/raw-loader/dist/cjs.js!./src/app/components/login/login.component.html")).default,
+      styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
+      /*! ./login.component.css */
+      "./src/app/components/login/login.component.css")).default]
+    })], LoginComponent);
     /***/
   },
 
@@ -1135,6 +1271,190 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   },
 
   /***/
+  "./src/app/services/auth.service.ts":
+  /*!******************************************!*\
+    !*** ./src/app/services/auth.service.ts ***!
+    \******************************************/
+
+  /*! exports provided: AuthService */
+
+  /***/
+  function srcAppServicesAuthServiceTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "AuthService", function () {
+      return AuthService;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/router */
+    "./node_modules/@angular/router/fesm2015/router.js");
+    /* harmony import */
+
+
+    var firebase_app__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! firebase/app */
+    "./node_modules/firebase/app/dist/index.cjs.js");
+    /* harmony import */
+
+
+    var firebase_app__WEBPACK_IMPORTED_MODULE_3___default =
+    /*#__PURE__*/
+    __webpack_require__.n(firebase_app__WEBPACK_IMPORTED_MODULE_3__);
+    /* harmony import */
+
+
+    var _angular_fire_auth__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! @angular/fire/auth */
+    "./node_modules/@angular/fire/auth/es2015/index.js");
+    /* harmony import */
+
+
+    var _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    /*! @angular/fire/firestore */
+    "./node_modules/@angular/fire/firestore/es2015/index.js");
+    /* harmony import */
+
+
+    var rxjs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    /*! rxjs */
+    "./node_modules/rxjs/_esm2015/index.js");
+    /* harmony import */
+
+
+    var rxjs_operators__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+    /*! rxjs/operators */
+    "./node_modules/rxjs/_esm2015/operators/index.js");
+
+    var AuthService =
+    /*#__PURE__*/
+    function () {
+      function AuthService(afAuth, afs, router) {
+        var _this2 = this;
+
+        _classCallCheck(this, AuthService);
+
+        this.afAuth = afAuth;
+        this.afs = afs;
+        this.router = router;
+        this.user$ = this.afAuth.authState.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_7__["switchMap"])(function (user) {
+          if (user) {
+            return _this2.afs.doc("users/".concat(user.uid)).valueChanges();
+          } else {
+            return Object(rxjs__WEBPACK_IMPORTED_MODULE_6__["of"])(null);
+          }
+        }));
+      }
+
+      _createClass(AuthService, [{
+        key: "googleSignIn",
+        value: function googleSignIn() {
+          return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0,
+          /*#__PURE__*/
+          regeneratorRuntime.mark(function _callee() {
+            var provider, credential;
+            return regeneratorRuntime.wrap(function _callee$(_context) {
+              while (1) {
+                switch (_context.prev = _context.next) {
+                  case 0:
+                    provider = new firebase_app__WEBPACK_IMPORTED_MODULE_3__["auth"].GoogleAuthProvider();
+                    _context.next = 3;
+                    return this.afAuth.auth.signInWithPopup(provider);
+
+                  case 3:
+                    credential = _context.sent;
+                    return _context.abrupt("return", this.updateUserData(credential.user));
+
+                  case 5:
+                  case "end":
+                    return _context.stop();
+                }
+              }
+            }, _callee, this);
+          }));
+        }
+      }, {
+        key: "signOut",
+        value: function signOut() {
+          return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0,
+          /*#__PURE__*/
+          regeneratorRuntime.mark(function _callee2() {
+            return regeneratorRuntime.wrap(function _callee2$(_context2) {
+              while (1) {
+                switch (_context2.prev = _context2.next) {
+                  case 0:
+                    _context2.next = 2;
+                    return this.afAuth.auth.signOut();
+
+                  case 2:
+                    return _context2.abrupt("return", this.router.navigate(['/']));
+
+                  case 3:
+                  case "end":
+                    return _context2.stop();
+                }
+              }
+            }, _callee2, this);
+          }));
+        }
+      }, {
+        key: "updateUserData",
+        value: function updateUserData(_ref) {
+          var uid = _ref.uid,
+              email = _ref.email,
+              displayName = _ref.displayName,
+              photoURL = _ref.photoURL;
+          var userRef = this.afs.doc("user/".concat(uid));
+          var data = {
+            uid: uid,
+            email: email,
+            displayName: displayName,
+            photoURL: photoURL
+          };
+          return userRef.set(data, {
+            merge: true
+          });
+        }
+      }]);
+
+      return AuthService;
+    }();
+
+    AuthService.ctorParameters = function () {
+      return [{
+        type: _angular_fire_auth__WEBPACK_IMPORTED_MODULE_4__["AngularFireAuth"]
+      }, {
+        type: _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_5__["AngularFirestore"]
+      }, {
+        type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]
+      }];
+    };
+
+    AuthService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+      providedIn: 'root'
+    })], AuthService);
+    /***/
+  },
+
+  /***/
   "./src/app/services/item.service.ts":
   /*!******************************************!*\
     !*** ./src/app/services/item.service.ts ***!
@@ -1200,6 +1520,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         key: "getItems",
         value: function getItems() {
           return this.items;
+        }
+      }, {
+        key: "deleteItem",
+        value: function deleteItem(item) {
+          this.itemDoc = this.afs.doc("items/".concat(item.id));
+          this.itemDoc.delete();
+        }
+      }, {
+        key: "updateItem",
+        value: function updateItem(item) {
+          this.itemDoc = this.afs.doc("items/".concat(item.id));
+          this.itemDoc.update(item);
         }
       }, {
         key: "addItem",
